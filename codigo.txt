@@ -1,0 +1,4 @@
+float j = 'a';
+cout << i << endl;
+
+int i = 0;
