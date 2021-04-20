@@ -28,10 +28,22 @@ struct Erro{
         
 };
 
- regex integer("(\\+|-)?[[:digit:]]+");
+
  
 int main(){
 
+
+       regex rgx(":((?!.*:).*$)");
+        regex a("[0-9].*$");
+   smatch match;
+   string input = "1AAA";
+ 
+    if (regex_search(input, a))
+    {
+       cout << "Alguma coisa escrito aqui" << endl;
+    }else{
+         cout << "Erro" << endl;
+    }
         
          Lexema lexema;
         list<Lexema> fila;
@@ -48,13 +60,7 @@ int main(){
                 if(text!=' ' && text!=';')
                         palavra.push_back(text);
                 else{
-                        if(text == ';'){
-                                cout << "Operador Simbolo -> " << text << endl;
-                                // token[i]->palavra = text;
-                                // token[i]->tipo = "Simbolo_"+ text;
-                                lexema.setLexema(";");
-                                lexema.setLine(linha);
-                        }
+                       
                         
                         if(isVariavel(palavra)){
 
@@ -108,6 +114,14 @@ int main(){
                                 lexema.setLexema(palavra);
                                 lexema.setLine(linha);
                         }  
+
+                         if(text == ';'){
+                                cout << "Operador Simbolo -> " << text << endl;
+                                // token[i]->palavra = text;
+                                // token[i]->tipo = "Simbolo_"+ text;
+                                lexema.setLexema(";");
+                                lexema.setLine(linha);
+                        }
                         
                         palavra.clear();
                         // cout << lexema.getLexema() << endl;
