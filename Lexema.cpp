@@ -4,21 +4,21 @@ using namespace std;
 
 class Lexema {
     private: 
-         string lexema;
-         int linha;
+         string m_lexema;
+         int m_linha;
 
     public:
         void setLine ( int linha){
-            linha = linha;
+            m_linha = linha;
         }
         void setLexema ( string lexema){
-            lexema = lexema;
+            m_lexema = lexema;
         }
         int getLinha(){
-            return linha;
+            return m_linha;
         }
         string getLexema (){
-            return lexema;
+            return m_lexema;
         }
 
 };

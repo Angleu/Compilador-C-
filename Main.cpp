@@ -1,7 +1,11 @@
 #include <iostream>
 #include <fstream>
+#include <queue>
+#include <regex>
+#include <list>
 #include "words.cpp"
 #include "Lexema.cpp"
+
 
 using namespace std;
 
@@ -24,15 +28,23 @@ struct Erro{
         
 };
 
-
+ regex integer("(\\+|-)?[[:digit:]]+");
+ 
 int main(){
-        Lexema lexema;
+
+        
+         Lexema lexema;
+        list<Lexema> fila;
         ifstream ficheiro("codigo.txt");
         Token token[20];
         int linha = 1;
         char text;
         string palavra;
         while(ficheiro.read(&text,1)){
+                if(palavra=="\n"){
+                        linha++;
+                        palavra.clear();
+                }
                 if(text!=' ' && text!=';')
                         palavra.push_back(text);
                 else{
@@ -40,6 +52,8 @@ int main(){
                                 cout << "Operador Simbolo -> " << text << endl;
                                 // token[i]->palavra = text;
                                 // token[i]->tipo = "Simbolo_"+ text;
+                                lexema.setLexema(";");
+                                lexema.setLine(linha);
                         }
                         
                         if(isVariavel(palavra)){
@@ -90,15 +104,46 @@ int main(){
                         }
                         else if(palavra != " "){
 
-                                cout << "Outro -> " << palavra << endl;
+                                cout << "Indentificador -> " << palavra << endl;
                                 lexema.setLexema(palavra);
                                 lexema.setLine(linha);
                         }  
-                        linha++;
+                        
                         palavra.clear();
+                        // cout << lexema.getLexema() << endl;
+                        // cout << lexema.getLinha() << endl;
+                        fila.push_front(lexema);
+                   
                 }
                 
         }
+
+
+        // cout << fila.front().getLexema() << endl;
+        // cout << fila.front().getLinha() << endl;
+        // fila.pop();
+        // fila.pop();
+        // fila.pop();
+
+        // cout << fila.front().getLexema() << endl;
+        // cout << fila.front().getLinha() << endl;
+
+        // cout << fila.back().getLexema() << endl;
+        // cout << fila.back().getLinha() << endl;
+
+        // fila.pop_back();
+
+        // cout << fila.back().getLexema() << endl;
+        // cout << fila.back().getLinha() << endl;
+
+        
+        
+        // for(Lexema it = lista.begin(); it!=lista.end();it++){
+	// 	//printa os numeros pares começando do inicio da lista	
+	// 		cout << it.getLexema() << endl;
+	// }
+        
+
         ficheiro.close();
         return 0;
 }

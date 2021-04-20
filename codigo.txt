@@ -1,4 +1,7 @@
+int i = 0;
 float j = 'a';
+char j = 'a';
+
 cout << i << endl;
 
-int i = 0;
+
