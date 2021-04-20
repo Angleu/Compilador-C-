@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "words.cpp"
+#include "Lexema.cpp"
 
 using namespace std;
 
@@ -25,55 +26,76 @@ struct Erro{
 
 
 int main(){
+        Lexema lexema;
         ifstream ficheiro("codigo.txt");
         Token token[20];
-        int i = 0;
+        int linha = 1;
         char text;
-        string lexema;
+        string palavra;
         while(ficheiro.read(&text,1)){
                 if(text!=' ' && text!=';')
-                        lexema.push_back(text);
+                        palavra.push_back(text);
                 else{
                         if(text == ';'){
                                 cout << "Operador Simbolo -> " << text << endl;
-                                // token[i]->lexema = text;
+                                // token[i]->palavra = text;
                                 // token[i]->tipo = "Simbolo_"+ text;
                         }
                         
-                        if(isVariavel(lexema)){
+                        if(isVariavel(palavra)){
 
-                                cout << "Variavel -> " << lexema << endl;
+                                cout << "Variavel -> " << palavra << endl;
+                                lexema.setLexema(palavra);
+                                lexema.setLine(linha);
                         }
-                        else if(isNumero(lexema)){
-                                cout << "Numero -> " << lexema << endl;
+                        else if(isNumero(palavra)){
+                                cout << "Numero -> " << palavra << endl;
+                                lexema.setLexema(palavra);
+                                lexema.setLine(linha);
                         }
-                        else if(isOPERADORES_ATRIBUICAO(lexema)){
-                                cout << "Operador Atribuicao -> " << lexema << endl;
+                        else if(isOPERADORES_ATRIBUICAO(palavra)){
+                                cout << "Operador Atribuicao -> " << palavra << endl;
+                                lexema.setLexema(palavra);
+                                lexema.setLine(linha);
                         }
-                        else if(isOPERADORES_ARITMATRICO(lexema)){
-                                cout << "Operador Aritmetrico -> " << lexema << endl;
+                        else if(isOPERADORES_ARITMATRICO(palavra)){
+                                cout << "Operador Aritmetrico -> " << palavra << endl;
+                                lexema.setLexema(palavra);
+                                lexema.setLine(linha);
                         }
-                        else if(isOPERADORES_COMPARACAO(lexema)){
-                                cout << "Operador Comparacao -> " << lexema << endl;
+                        else if(isOPERADORES_COMPARACAO(palavra)){
+                                cout << "Operador Comparacao -> " << palavra << endl;
+                                lexema.setLexema(palavra);
+                                lexema.setLine(linha);
                         }
-                        else if(isOPERADOR_LOGICO(lexema)){
-                                cout << "Operador Logico -> " << lexema << endl;
+                        else if(isOPERADOR_LOGICO(palavra)){
+                                cout << "Operador Logico -> " << palavra << endl;
+                                lexema.setLexema(palavra);
+                                lexema.setLine(linha);
                         }
-                        else if(isSimbolo(lexema)){
-                                cout << "Operador Simbolo -> " << lexema << endl;
+                        else if(isSimbolo(palavra)){
+                                cout << "Operador Simbolo -> " << palavra << endl;
+                                lexema.setLexema(palavra);
+                                lexema.setLine(linha);
                         }
-                        else if(isDECISAO(lexema)){
-                                cout << "Extrutura de Decisao -> " << lexema << endl;
+                        else if(isDECISAO(palavra)){
+                                cout << "Extrutura de Decisao -> " << palavra << endl;
+                                lexema.setLexema(palavra);
+                                lexema.setLine(linha);
                         }
-                        else if(isREPETICAO(lexema)){
-                                cout << "Extrutura de Repeticao -> " << lexema << endl;
+                        else if(isREPETICAO(palavra)){
+                                cout << "Extrutura de Repeticao -> " << palavra << endl;
+                                lexema.setLexema(palavra);
+                                lexema.setLine(linha);
                         }
-                        else if(lexema != " "){
+                        else if(palavra != " "){
 
-                                cout << "Outro -> " << lexema << endl;
+                                cout << "Outro -> " << palavra << endl;
+                                lexema.setLexema(palavra);
+                                lexema.setLine(linha);
                         }  
-                        i++;
-                        lexema.clear();
+                        linha++;
+                        palavra.clear();
                 }
                 
         }
