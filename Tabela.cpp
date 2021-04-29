@@ -14,19 +14,4 @@ class ListaSimbolos{
 
     public:
 
-
-
-
 };
-
-
-/*
-    lexema
-    linha 
-    token
-    valor
-    tipo
-    tamnha(byte)
-    escolpo
-    endereço de memoria
-*/
