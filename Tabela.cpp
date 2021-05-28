@@ -13,10 +13,6 @@ class ListaSimbolos{
         unsigned short int m_tamanho;
 
     public:
-
-
-
-
 };
 
 

@@ -132,32 +132,6 @@ int main(){
                 
         }
 
-
-        // cout << fila.front().getLexema() << endl;
-        // cout << fila.front().getLinha() << endl;
-        // fila.pop();
-        // fila.pop();
-        // fila.pop();
-
-        // cout << fila.front().getLexema() << endl;
-        // cout << fila.front().getLinha() << endl;
-
-        // cout << fila.back().getLexema() << endl;
-        // cout << fila.back().getLinha() << endl;
-
-        // fila.pop_back();
-
-        // cout << fila.back().getLexema() << endl;
-        // cout << fila.back().getLinha() << endl;
-
-        
-        
-        // for(Lexema it = lista.begin(); it!=lista.end();it++){
-	// 	//printa os numeros pares começando do inicio da lista	
-	// 		cout << it.getLexema() << endl;
-	// }
-        
-
         ficheiro.close();
         return 0;
 }
