@@ -68,11 +68,11 @@ int main(){
                                 lexema.setLexema(palavra);
                                 lexema.setLine(linha);
                         }
-                        else if(isNumero(palavra)){
-                                cout << "Numero -> " << palavra << endl;
-                                lexema.setLexema(palavra);
-                                lexema.setLine(linha);
-                        }
+                        // else if(isNumero(palavra)){
+                        //         cout << "Numero -> " << palavra << endl;
+                        //         lexema.setLexema(palavra);
+                        //         lexema.setLine(linha);
+                        // }
                         else if(isOPERADORES_ATRIBUICAO(palavra)){
                                 cout << "Operador Atribuicao -> " << palavra << endl;
                                 lexema.setLexema(palavra);
