@@ -2,6 +2,8 @@
 
 using namespace std;
 
+typedef char Token_char;
+
 const string NUMERO[10] = {"0","1","2",
                           "3","4","5",
                           "6","7","8",
@@ -11,6 +13,8 @@ const char letra[26] = {'A' , 'B' , 'C' , 'D' , 'E' , 'F' , 'G'
        , 'H' , 'I' , 'J' , 'K' , 'L' , 'M' , 'N'
        , 'O' , 'P' , 'Q' , 'R' , 'S' , 'T' , 'U'
        , 'V' , 'W' , 'X' , 'Y' , 'Z' };
+
+const Token_char TOk_Letra_A = 'A';
        
 const string simbolo[16] = {"[" , "]" , "{" , "}" , "(" , ")" , "<" , ">"
                         , "\'" , "\"" , "=" , "," , "." , "," , ";"};

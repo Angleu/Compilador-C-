@@ -1,17 +1,15 @@
 #include <iostream>
-#include "Lexema.cpp"
+#include <list>
+#include "Data.cpp"
 
-using namespace std;
 
-
-class ListaSimbolos{
+class Tabela{
     public:
-        Lexema m_lexema;
-        string m_token,m_valor;
-        string m_tipo, m_escopo;
-        string m_enderecoMemoria;
-        unsigned short int m_tamanho;
+        std::list<Data> data;
 
     public:
+        void add(Data novo){
+            data.push_front(novo);
+        }
 
 };
