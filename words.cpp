@@ -99,14 +99,14 @@ bool isOPERADORES_ATRIBUICAO(string operador){
        return false;
 }
 
-bool isNumero(string letra){
-       for(int i = 0; i<NUMERO->length(); i++){
-              if(NUMERO[i] == letra){
-                     return true;
-              }
-       }      
-       return false;
-}
+// bool isNumero(string letra){
+//        for(int i = 0; i<NUMERO->length(); i++){
+//               if(NUMERO[i] == letra){
+//                      return true;
+//               }
+//        }      
+//        return false;
+// }
 
 bool isVariavel(string palavra){
        for(int i = 0; i<5; i++){
